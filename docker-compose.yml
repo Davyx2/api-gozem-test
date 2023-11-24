@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  app:
+    image: $IMAGE_DOCKER  
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - DB_URL=$DB_URL
+    stdin_open: true
+    tty: true
+
+
+networks:
+  default:
+    name: gozem-test
+    external: true
+  
