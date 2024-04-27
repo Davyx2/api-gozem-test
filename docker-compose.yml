@@ -8,9 +8,10 @@ services:
     ports:
       - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
     environment:
-      - DB_URL=$DB_URL
+      DB_URL: $DB_URL
     stdin_open: true
     tty: true
+
 
 
 networks:
